@@ -38,7 +38,7 @@ class ViewController: UIViewController
             .strokeColor : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
         ]
         let attributedString = NSAttributedString(string: "Score: \(game.score)", attributes: attributes)
-        ScoreLabel.attributedText = attributedString
+        scoreLabel.attributedText = attributedString
     }
         
     
@@ -53,7 +53,7 @@ class ViewController: UIViewController
         flipCountLabel.attributedText = attributedString
     }
     
-    @IBOutlet weak var ScoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
@@ -96,7 +96,8 @@ class ViewController: UIViewController
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 0) : themeColorButton
             }
         }
-        
+        // flipCountLabel.text = "Flips: \(game.flipCount)"
+        scoreLabel.text = "Score: \(game.score)"
     }
     
     
@@ -185,8 +186,8 @@ class ViewController: UIViewController
         for cards in cardButtons {
             cards.backgroundColor = themeColorButton
         }
-        // scoreLabel.textColor = themeColorButton
-        // countLabel.textColor = themeColorButton
+//        scoreLabel.textColor = themeColorButton
+//        flipCountLabel.textColor = themeColorButton
         // newGameButton.setTitleColor(themeColorButton, for: .normal)
     }
     

@@ -10,7 +10,6 @@ import Foundation
 struct Concentration
 {
     private(set) var cards = [Card]()
-    var score = 0
     
     // 뒤집혀진 카드의 숫자를 Tracking, 어떤 카드도 뒤집혀 있지 않은 상태(== nil)를 위해 옵셔널을 타입으로
    private var indexOfOneAndOnlyFaceUpCard: Int? {
@@ -37,6 +36,10 @@ struct Concentration
             
         }
     }
+    
+    // var score = 0
+    private(set) var flipCount = 0
+    private(set) var score: Int
     
     
    
@@ -80,7 +83,15 @@ struct Concentration
 //            cards.append(card)
         }
         // TODO: Shuffle the cards
-        
+        for _ in 1...1000 {
+            for index in cards.indices {
+                let randomIndex = cards.count.arc4random
+                let temp = cards[index]
+                cards[index] = cards[randomIndex]
+                cards[randomIndex] = temp
+            }
+        }
+
     }
     
 }
