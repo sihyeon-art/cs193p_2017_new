@@ -16,24 +16,11 @@ struct Concentration
         get {
             
             return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
-//            var foundIndex: Int?
-//            for index in cards.indices {
-//                if cards[index].isFaceUp {
-//                    if foundIndex == nil {
-//                        foundIndex = index
-//                    } else {
-//                        return nil
-//                    }
-//                }
-//            }
-//            return foundIndex
-            
         }
         set {
             for index in cards.indices {
                 cards[index].isFaceUp = (index == newValue)
             }
-            
         }
     }
     
@@ -41,12 +28,9 @@ struct Concentration
     private(set) var flipCount = 0
     private(set) var score: Int
     
-    
-   
-    
-    
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): choosen index not in the cards")
+        flipCount += 1
         if !cards[index].isMatched {
             //matchIndex에 뒤집혀진 카드의 index 값을 넣고, 뒤집힌 카드가 동일한 카드임을 방지하기 위한 과정
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
@@ -71,8 +55,6 @@ struct Concentration
         }
         }
  
-    
-    
     init(numberOfPairsOfCards: Int) {
         assert(numberOfPairsOfCards > 0, "Concentration.init(\(numberOfPairsOfCards)): you must have at least one pair of cards")
         score = 0
@@ -101,4 +83,3 @@ extension Collection {
         return count == 1 ? first : nil
     }
 }
-

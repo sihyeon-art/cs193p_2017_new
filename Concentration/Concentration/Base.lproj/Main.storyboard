@@ -25,7 +25,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="newGameButton:" destination="ELI-S3-uVV" eventType="touchUpInside" id="0bD-tC-vJi"/>
+                                    <action selector="newGameButtonPressed:" destination="ELI-S3-uVV" eventType="touchUpInside" id="pWd-8K-fbW"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fB8-rM-Xtd">
@@ -228,6 +228,7 @@
                     <connections>
                         <outlet property="ScoreLabel" destination="0ub-za-NUy" id="jKg-Jr-OtW"/>
                         <outlet property="flipCountLabel" destination="08m-0V-NUr" id="Xg0-vd-3dw"/>
+                        <outlet property="newGameButton" destination="za1-pO-Ocl" id="T1s-TO-WtP"/>
                         <outletCollection property="cardButtons" destination="cSQ-1O-941" collectionClass="NSMutableArray" id="YZ6-bY-Y2j"/>
                         <outletCollection property="cardButtons" destination="jSg-hn-AzY" collectionClass="NSMutableArray" id="esO-LR-Ruc"/>
                         <outletCollection property="cardButtons" destination="lx1-Hx-MaF" collectionClass="NSMutableArray" id="048-7w-W0t"/>
